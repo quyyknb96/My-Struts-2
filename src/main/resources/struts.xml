@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="false"/>
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="login" class="action.LoginAction">
+            <result name="success">index.jsp</result>
+            <result name="error">login.jsp</result>
+            <result name="input">login.jsp</result>
+        </action>
+        <action name="logout" class="action.LoginAction" method="logout">
+            <result name="logout">login.jsp</result>
+        </action>
+        <action name="user_getAll" class="action.UserAction" method="getAll">
+            <result name="success">userAll.jsp</result>
+        </action>
+        <action name="user_get" class="action.UserAction" method="getById">
+            <result name="success">userDetail.jsp</result>
+        </action>
+        <action name="user_update" class="action.UserAction" method="update">
+            <result name="success">userDetail.jsp</result>
+        </action>
+        <action name="user_changepassword" class="action.UserAction" method="changPassword">
+            <result name="success">userDetail.jsp</result>
+            <result name="error">userDetail.jsp</result>
+        </action>
+        <action name="user_deleteProject" class="action.UserAction" method="deleteProject">
+            <result name="success">userAll.jsp</result>
+        </action>
+        <action name="user_addProject" class="action.UserAction" method="addProject">
+            <result name="success">userAll.jsp</result>
+            <result name="error">userAll.jsp</result>
+        </action>
+        <action name="user_addNew" class="action.UserAction" method="addNew">
+            <result name="success">login.jsp</result>
+            <result name="error">register.jsp</result>
+            <result name="input">register.jsp</result>
+        </action>
+        <action name="project_getAll" class="action.ProjectAction" method="getAlll">
+            <result name="success">projectAll.jsp</result>
+        </action>
+        <action name="project_get" class="action.ProjectAction" method="getById">
+            <result name="success">projectDetail.jsp</result>
+        </action>
+        <action name="project_update" class="action.ProjectAction" method="update">
+            <result name="success">projectDetail.jsp</result>
+        </action>
+        <action name="project_deleteUser" class="action.ProjectAction" method="deleteUser">
+            <result name="success">projectAll.jsp</result>
+        </action>
+        <action name="project_addUser" class="action.ProjectAction" method="addUser">
+            <result name="success">projectAll.jsp</result>
+            <result name="error">projectAll.jsp</result>
+        </action>
+        <action name="project_addNew" class="action.ProjectAction" method="addNew">
+            <result name="success">projectAll.jsp</result>
+        </action>
+    </package>
+</struts>
